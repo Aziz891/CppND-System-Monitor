@@ -23,7 +23,7 @@ float Process::CpuUtilization() {
   float value;
 
   value = LinuxParser::ActiveJiffies(pid_);
-  if (value > 20000) value = (value / ticks);
+  value = (value / ticks);
   value /= UpTime();
 
   return value;
